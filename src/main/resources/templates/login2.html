@@ -1,0 +1,15 @@
+
+
+       <form th:action="@{/login}" method="POST">
+         <fieldset id="inputs">
+           <input id="username" type="email" name="email" placeholder="Your email address" required>   
+           <input id="password" type="password" name="password" placeholder="Password" required>      
+         </fieldset>
+         <fieldset id="actions">
+           <input type="submit" id="submit" value="Log in">	
+           <div style="-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid  #D1D1D1;height: 30px; width: 100px;font: bold 14px Arial, Helvetica;color: #dbe2e0;float:right;background-color:#B4A394;">		            
+           <a href="/registration" style="color:white;">Creer compte</a>
+           </div>
+           <label><input type="checkbox" checked="checked"><span style="color: #dbe2e0;"> Enregistrer</span></label>
+         </fieldset>
+       </form>

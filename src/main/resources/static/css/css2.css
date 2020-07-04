@@ -1,0 +1,421 @@
+ .searchbar{
+   
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 450px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    }
+
+
+body
+{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+h1
+{
+    font-family: 'crete Round',serif;
+    font-size: 45px;
+}
+
+    .wrapper
+{
+    
+    width: 940px;
+    margin: 0 auto;
+    padding: 0px 10px;
+    
+}
+
+.point
+{
+    color: #AD8B6E;
+}
+
+/*  Header */
+
+header
+{
+    height: 120px;
+}
+header h1
+{ 
+    margin-top: 32px;
+    float: left;
+}
+header nav 
+{
+    float: right;
+    margin-top: 50px;
+    
+}
+header nav ul li
+{
+    display: inline-block;
+    float: left;
+}
+
+header nav ul li a
+{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 20px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  float: right;
+  
+  border-bottom: 1px solid #fff;
+  border-radius: 3px;    
+}
+
+nav li {
+  float: left;          
+}
+
+nav #login {
+  border-right: 1px solid #ddd;
+  box-shadow: 1px 0 0 #fff;  
+}
+
+h2
+{
+    font-size: 55px;
+    /*color: #d1e8e2/eee2dc/bab2b5;/eae7dc*/
+    color: #eae7dc;
+}
+
+h4
+{
+    font-size: 24px;
+}
+
+p
+{
+    line-height: 20px;
+    color: #444;
+}
+
+/* main image */
+
+#main-image
+{
+    height: 580px;
+    background: url(images/Image9.jpeg) center;
+    background-size:cover;
+    
+}
+
+#main-image h2 
+{
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 150px 0px 40px 0px;
+    margin-bottom: 2px;
+}
+.button-1
+{
+    font-size: 20px;
+  background-color: #1f2833;
+    color: #eae7dc; 
+
+    margin: 0 auto;
+    width: 120px;
+    height: 50px;
+    display: block;
+    text-align: center;
+    /* line-height sa sera le meme que height pour que chaque ligne prend toute la longeur de boutton */
+    line-height: 50px;
+    border-radius: 20px;
+}
+.clear
+{
+    clear: both;
+}
+.button-1:hover
+{
+    background-color: #443935;
+}
+
+nav #login-trigger
+ {
+  display: inline-block;
+ 
+  *display: inline;
+  *zoom: 1;
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 #fff; 
+}
+nav #signup a {
+  display: inline-block;
+  border-right:1px solid #ddd;
+  *display: inline;
+  *zoom: 1;
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 #fff; 
+}
+
+nav #signup a {
+  border-radius: 0 3px 3px 0;
+}
+
+nav #login-trigger {
+  border-radius: 3px 0 0 3px;
+}
+
+nav #login-trigger:hover,
+nav #login .active,
+nav #signup a:hover {
+  background: #fff;
+}
+
+nav #login-content {
+  display: none;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  z-index: 999;    
+  background: #fff;
+  background-image: linear-gradient(top, #fff, #eee);  
+  padding: 15px;
+  box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
+  border-radius: 3px 0 3px 3px;
+}
+
+nav li #login-content {
+  right: 0;
+  width: 250px;  
+}
+/* Steps */
+
+#steps p
+{
+    margin-bottom: 20px;
+}
+
+#steps h4
+{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+#steps ul
+{
+    margin: 80px 0px;
+}
+
+#steps ul li 
+{
+    width: 300px;
+    padding-top: 140px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#step-1
+{
+    background: url(images/steps-icon-1.png) no-repeat center top;
+    float: left;
+}
+
+#step-2
+{
+    background: url(images/steps-icon-2.png) no-repeat center top;
+    float: right;
+}
+
+#step-3
+
+/*possibilities*/
+#possibilties
+{
+    background-color: #efefef;
+    padding: 60px 0px;
+}
+#possibilties article
+{
+    width: 460px;
+    height: 270px;
+    float: left;
+    border-radius: 10px;
+    
+}
+
+#possibilties article:first-child
+{
+    margin-right: 20px;
+}
+
+.hoverlay
+{
+    background-color: rgba(255,255,255,0.6);
+    height: 100%;
+    width: 190px;
+    padding: 20px;
+    text-align: center;
+   
+}
+
+ div h4
+{
+    border-bottom: 1px  blue solid;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    margin: 20px;
+}
+
+.botton-2
+{
+     font-size: 20px;
+    background-color: orange;
+    color: white;
+    margin: 0 auto;
+    width: 120px;
+    height: 50px;
+    display: block;
+    text-align: center;
+    /* line-height sa sera le meme que height pour que chaque ligne prend toute la longeur de boutton */
+    line-height: 50px;
+    border-radius: 20px;
+}
+
+
+/*--------------------*/
+#inputs
+{
+	background-color: #1f2833;
+	border-radius: 5px;
+}
+#inputs input {
+  background: #eae7dc;
+  padding: 6px 5px;
+  margin: 0 0 5px 0;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px #ccc inset;
+}
+
+#inputs input:focus {
+  background-color: #fff;
+  border-color: #e8c291;
+  outline: none;
+  box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+/*--------------------*/
+
+#login #actions {
+	border-color:  #D1D1D1;
+	border-radius: 5px;
+  margin: 10px 0 0 0;
+}
+
+#login #submit {    
+  background-color:#B4A394; 
+
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+  border: 1px solid  #D1D1D1;
+  float: left;
+  height: 30px;
+  padding: 0;
+  width: 100px;
+  cursor: pointer;
+  font: bold 14px Arial, Helvetica;
+  color: #dbe2e0;
+}
+#login #register
+{
+  background-color:#B4A394; 
+
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+  border: 1px solid  #D1D1D1;
+  float: left;
+  height: 30px;
+  padding: 0;
+  width: 100px;
+  cursor: pointer;
+  font: bold 14px Arial, Helvetica;
+  color: #dbe2e0;	
+}
+#login #submit:hover,
+#login #submit:focus {    
+  background-color: #e97171;
+  background-image: linear-gradient(top, #d14545, #e97171);
+} 
+
+#login #submit:active {   
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;   
+}
+
+#login #submit::-moz-focus-inner {
+  border: none;
+}
+
+#login label {
+  float: right;
+  line-height: 30px;
+}
+
+#login label input {
+  position: relative;
+  top: 2px;
+  right: 2px;
+}

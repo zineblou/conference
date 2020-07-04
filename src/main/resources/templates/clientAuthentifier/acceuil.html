@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"href="../static/css/css2.css"
+th:href="@{css/css2.css}"/>
+</head>
+<body>
+        <header>
+            <div class="wrapper">
+                <h1>Gestion Conferences<span class="point">.</span></h1>
+                <nav>
+                    <ul>
+                        <li id="signup"><a href="#main-image">acceuil </a></li>
+                        <li id="signup"><a href="#steps">Salles </a></li>                
+			 	
+					    <li id="login">
+					      <a id="login-trigger" href="#">
+					        Log in <span style="color: #AD8B6E;">▼</span>
+					      </a>
+					      <div id="login-content" style="background-color:#1f2833; border-radius: 5px;">
+					        <form>
+					          <fieldset id="inputs">
+					            <input id="username" type="email" name="Email" placeholder="Your email address" required>   
+					            <input id="password" type="password" name="Password" placeholder="Password" required>
+					          </fieldset>
+					          <fieldset id="actions">
+					            <input type="submit" id="submit" value="Log in">	
+					            <div style="-moz-border-radius: 3px;-webkit-border-radius: 3px;border-radius: 3px;border: 1px solid  #D1D1D1;height: 30px; width: 100px;font: bold 14px Arial, Helvetica;color: #dbe2e0;float:right;background-color:#B4A394;">		            
+					            <a href="/registration" style="color:white;">Sign up</a>
+					            </div>
+					            <label><input type="checkbox" checked="checked"><span style="color: #dbe2e0;"> Keep me signed in</span></label>
+					          </fieldset>
+					        </form>
+					      </div>                     
+
+					  </ul>
+					</nav>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+					<script>
+						$(document).ready(function(){
+					  $('#login-trigger').click(function(){
+					    $(this).next('#login-content').slideToggle();
+					    $(this).toggleClass('active');          
+					    
+					    if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+					      else $(this).find('span').html('&#x25BC;')
+					    })
+					});
+					</script>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+        <section id="main-image">
+            <div class="wrapper">           
+                <h2 > <strong>trouvez votre<br>salle de conference sur mesure</strong></h2>
+                <a href="#" class="button-1">Par ici</a>    
+            </div>
+        </section>
+
+
+        <section id="steps">
+            <div class="wrapper">
+                <ul style="   list-style: none;">
+                    <li id="step-1">
+                        <h4>planifier</h4>
+                        <p>
+                            Confiez-nous vos rêves d'évasion : en famille ou entre amis, nous trouverons la formule qui comblera vos attentes.
+                        </p>
+                    </li>
+                    <li id="step-2">
+                        <h4>organiser</h4>
+                        <p>
+                            Bénéficiez de l'expertise de nos spécialistes de chaque destination, ils vous accompagnent dans la réalisation de votre voyage.
+                        </p>
+                    </li>
+                    <div class="clear"></div>
+                </ul>
+            </div>
+            
+        </section>
+        <section id="possibilties">
+
+        </section>
+        <section id="contact">
+            <div class="wrapper">
+            </div>
+        </section>
+        <footer>    
+        </footer>
+
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"href="../static/css/css2.css"
+th:href="@{css/css2.css}"/>
+
+
+<style type="text/css">
+ .searchbar{
+   
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+    }
+
+    .search_input{
+    color: white;
+    border: 0;
+    outline: 0;
+    background: none;
+    width: 0;
+    caret-color:transparent;
+    line-height: 40px;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_input{
+    padding: 0 10px;
+    width: 400px;
+    caret-color:red;
+    transition: width 0.4s linear;
+    }
+
+    .searchbar:hover > .search_icon{
+    background: white;
+    color: #e74c3c;
+    }
+
+    .search_icon{
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color:white;
+    }
+
+
+body
+{
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+}
+
+h1
+{
+    font-family: 'crete Round',serif;
+    font-size: 45px;
+}
+
+    .wrapper
+{
+    
+    width: 940px;
+    margin: 0 auto;
+    padding: 0px 10px;
+    
+}
+
+.point
+{
+    color: #AD8B6E;
+}
+
+/*  Header */
+
+header
+{
+    height: 120px;
+}
+header h1
+{ 
+    margin-top: 32px;
+    float: left;
+}
+header nav 
+{
+    float: right;
+    margin-top: 50px;
+    
+}
+header nav ul li
+{
+    display: inline-block;
+    float: left;
+}
+
+header nav ul li a
+{
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-right: 20px;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: relative;
+  float: right;
+  
+  border-bottom: 1px solid #fff;
+  border-radius: 3px;    
+}
+
+nav li {
+  float: left;          
+}
+
+nav #login {
+  border-right: 1px solid #ddd;
+  box-shadow: 1px 0 0 #fff;  
+}
+
+h2
+{
+    font-size: 55px;
+    /*color: #d1e8e2/eee2dc/bab2b5;/eae7dc*/
+    color: #eae7dc;
+}
+
+h4
+{
+    font-size: 24px;
+}
+
+p
+{
+    line-height: 20px;
+    color: #444;
+}
+
+/* main image */
+
+#main-image
+{
+    height: 580px;
+    background: url(images/Image9.jpeg) center;
+    background-size:cover;
+    
+}
+
+#main-image h2 
+{
+    font-weight: normal;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 150px 0px 40px 0px;
+    margin-bottom: 2px;
+}
+.button-1
+{
+    font-size: 20px;
+  background-color: #1f2833;
+    color: #eae7dc; 
+
+    margin: 0 auto;
+    width: 120px;
+    height: 50px;
+    display: block;
+    text-align: center;
+    /* line-height sa sera le meme que height pour que chaque ligne prend toute la longeur de boutton */
+    line-height: 50px;
+    border-radius: 20px;
+}
+.clear
+{
+    clear: both;
+}
+.button-1:hover
+{
+    background-color: #443935;
+}
+
+nav #login-trigger
+ {
+  display: inline-block;
+ 
+  *display: inline;
+  *zoom: 1;
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 #fff; 
+}
+nav #signup a {
+  display: inline-block;
+  border-right:1px solid #ddd;
+  *display: inline;
+  *zoom: 1;
+  height: 25px;
+  line-height: 25px;
+  font-weight: bold;
+  padding: 0 8px;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 #fff; 
+}
+
+nav #signup a {
+  border-radius: 0 3px 3px 0;
+}
+
+nav #login-trigger {
+  border-radius: 3px 0 0 3px;
+}
+
+nav #login-trigger:hover,
+nav #login .active,
+nav #signup a:hover {
+  background: #fff;
+}
+
+nav #login-content {
+  display: none;
+  position: absolute;
+  top: 24px;
+  right: 0;
+  z-index: 999;    
+  background: #fff;
+  background-image: linear-gradient(top, #fff, #eee);  
+  padding: 15px;
+  box-shadow: 0 2px 2px -1px rgba(0,0,0,.9);
+  border-radius: 3px 0 3px 3px;
+}
+
+nav li #login-content {
+  right: 0;
+  width: 250px;  
+}
+/* Steps */
+
+#steps p
+{
+    margin-bottom: 20px;
+}
+
+#steps h4
+{
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+#steps ul
+{
+    margin: 80px 0px;
+}
+
+#steps ul li 
+{
+    width: 300px;
+    padding-top: 140px;
+    text-align: center;
+    margin-right: 10px;
+}
+
+#step-1
+{
+    background: url(images/steps-icon-1.png) no-repeat center top;
+    float: left;
+}
+
+#step-2
+{
+    background: url(images/steps-icon-2.png) no-repeat center top;
+    float: right;
+}
+
+#step-3
+
+/*possibilities*/
+#possibilties
+{
+    background-color: #efefef;
+    padding: 60px 0px;
+}
+#possibilties article
+{
+    width: 460px;
+    height: 270px;
+    float: left;
+    border-radius: 10px;
+    
+}
+
+#possibilties article:first-child
+{
+    margin-right: 20px;
+}
+
+.hoverlay
+{
+    background-color: rgba(255,255,255,0.6);
+    height: 100%;
+    width: 190px;
+    padding: 20px;
+    text-align: center;
+   
+}
+
+ div h4
+{
+    border-bottom: 1px  blue solid;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    margin: 20px;
+}
+
+.botton-2
+{
+     font-size: 20px;
+    background-color: orange;
+    color: white;
+    margin: 0 auto;
+    width: 120px;
+    height: 50px;
+    display: block;
+    text-align: center;
+    /* line-height sa sera le meme que height pour que chaque ligne prend toute la longeur de boutton */
+    line-height: 50px;
+    border-radius: 20px;
+}
+
+
+/*--------------------*/
+#inputs
+{
+	background-color: #1f2833;
+	border-radius: 5px;
+}
+#inputs input {
+  background: #eae7dc;
+  padding: 6px 5px;
+  margin: 0 0 5px 0;
+  width: 200px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 1px #ccc inset;
+}
+
+#inputs input:focus {
+  background-color: #fff;
+  border-color: #e8c291;
+  outline: none;
+  box-shadow: 0 0 0 1px #e8c291 inset;
+}
+
+/*--------------------*/
+
+#login #actions {
+	border-color:  #D1D1D1;
+	border-radius: 5px;
+  margin: 10px 0 0 0;
+}
+
+#login #submit {    
+  background-color:#B4A394; 
+
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.5);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;    
+  border: 1px solid  #D1D1D1;
+  float: left;
+  height: 30px;
+  padding: 0;
+  width: 100px;
+  cursor: pointer;
+  font: bold 14px Arial, Helvetica;
+  color: #dbe2e0;
+}
+
+#login #submit:hover,
+#login #submit:focus {    
+  background-color: #e97171;
+  background-image: linear-gradient(top, #d14545, #e97171);
+} 
+
+#login #submit:active {   
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5) inset;   
+}
+
+#login #submit::-moz-focus-inner {
+  border: none;
+}
+
+#login label {
+  float: right;
+  line-height: 30px;
+}
+
+#login label input {
+  position: relative;
+  top: 2px;
+  right: 2px;
+}
+
+.clear
+{
+    clear: both;
+}
+</style>
+
+</head>
+
+<body>
+<!-- Search Bar -->
+        <header>
+            <div class="wrapper">
+                <h1>Gestion Conferences<span class="point">.</span></h1>
+                <nav>
+                    <ul>
+                        <li id="signup"><a href="/acceuilAth">acceuil </a></li>
+                        <li id="signup"><a href="/sallesAth">Salles </a></li>                
+			 			<li id="signup"><a th:href="@{/MesReservation}">Mes Reservations</a></li>
+					    <li id="login">
+					      <a id="login-trigger" href="#" th:utext="${user.getName()} +'▼'">
+					      </a>				      
+					      <div id="login-content" style="background-color:#1f2833; border-radius: 5px;">
+					      	
+					      	  <a href="/profile" style="color:white;">Mon compte</a>
+					          <form th:action="@{/logout}" method="get">
+							        <button class="btn btn-md btn-danger btn-block" name="registration"
+							                type="Submit">Logout
+							        </button>
+							  </form>
+							 
+					      </div>    
+					    </li>                 
+
+					  </ul>
+				</nav>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+					<script>
+						$(document).ready(function(){
+					  $('#login-trigger').click(function(){
+					    $(this).next('#login-content').slideToggle();
+					    $(this).toggleClass('active');          
+					    
+					    if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+					      else $(this).find('span').html('&#x25BC;')
+					    })
+					});
+					</script>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+<div class="container" style="margin-top:5px;border-top:1px solid black;padding:50px;">
+</div>
+<div class="container">
+
+	<table class="table">
+		<tr th:each="p:${reservations}" style="text-align:center;">
+		
+		 <td  th:style="'background: url('+${p.getSalleReservee().image}+') no-repeat center;border-radius: 30px;width:400px;'"> 
+		  </td>
+			<td>	
+							<!-- Intro Content -->
+							
+								<div class="intro_container d-flex flex-column align-items-start justify-content-center magic_up">
+									<table>
+										<tr>
+											<th>Titre</th>
+											<td><span th:utext="${p.getActivite().getTitre()}"></td>	
+										</tr>	
+										<tr>
+											<th>Theme</th>
+											<td><span th:utext="${p.getActivite().getTheme()}"></td>	
+										</tr>
+										<tr>
+											<th>Fichier</th>
+											<td><a th:href="${p.getFilePath()}" target="_self" download >Telecharger</a></td>	
+										</tr>
+										<tr>
+											<th>Status</th>
+											<td><span th:utext="${p.getStatus()}"></td>	
+										</tr>
+										<tr>
+											<th>Date de debut</th>
+											<td><span th:utext="${p.getDebutReservation()}"></span></td>	
+										</tr>
+										
+										<tr>
+											<th>Date de fin</th>
+											<td><span th:utext="${p.getFinReservation()}"></span></td>	
+										</tr>
+										
+										<tr th:if="${p.getA() == 1 }">
+											<th>Facture </th>
+											<td>
+                                         <a th:href="@{/creafPdf(idRes=${p.getIdReservation()})}" ><i class="fas fa-file-download"></i></a>
+											</td>
+										</tr >
+													
+									</table>
+									<!-- 
+										<div class="section_title_container">
+											<div class="section_subtitle" ><span th:utext="${p.getIdReservation()}"></span></div>
+											<div class="section_title" th:utext="${p.getTitreActivite()}"><h2 th:utext="${p.getTitreActivite()}"></h2></div>
+										</div>
+										<div class="intro_text">
+											<p th:utext="${p.getDescriptionActivite()}"></p>
+										</div>
+										<div class="intro_link"><p th:utext="${p.getDebutReservation()}"></p></div>
+										<div class="intro_link"><p th:utext="${p.getFinReservation()}"></p></div>
+										<a href="#" class="button_container intro_button"><div class="button text-center"><span>Annuler</span></div></a>
+								 -->
+								</div>
+							
+			</td>
+				
+		  			
+				</br>
+				</br>
+	       </tr>
+		</table>
+</div>
+        	<footer class="footer">
+		<div class="container">
+			<div class="row">
+
+				<!-- Footer Logo -->
+				<div class="col-lg-3 footer_col">
+					<div class="footer_logo_container">
+						<div class="footer_logo">
+							<a href="#" class="text-center">
+								<div class="footer_logo_subtitle">Lieux</div>
+								<div class="footer_logo_title">Pour conference</div>
+								<div class="footer_logo_stars">
+									<ul class="d-flex flex-row align-items-start justfy-content-start">
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									</ul>
+								</div>
+							</a>
+						</div>
+						<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by zineb louzi
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</div>
+					</div>
+				</div>
+
+				<!-- Footer Menu -->
+				<div class="col-lg-5 footer_col">
+					<div class="footer_menu">
+						<ul class="d-flex flex-row align-items-start justify-content-start">
+							<li><a href="index.html">Acceuil</a></li>
+							<li><a href="about.html">About us</a></li>
+							<li><a href="rooms.html">Salles</a></li>
+							
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+						<div class="footer_menu_text">
+							<p>Trouvez le lieu ideal pour votre conference.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer Contact -->
+				<div class="col-lg-4 footer_col">
+					<div class="footer_contact clearfix">
+						<div class="footer_contact_content float-lg-right">
+							<ul>
+								<li>Address: <span>Avenue guelmim</span></li>
+								<li>Phone: <span>+212 608 37 02 61</span></li>
+								<li>Email: <span>zineb louzi@gmail.com</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+
+		
+</body>
+</html>

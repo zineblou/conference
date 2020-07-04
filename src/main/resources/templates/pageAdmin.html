@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"href="../static/css/css2.css"
+th:href="@{css/css2.css}"/>
+
+</head>
+<style type="text/css">
+
+.notifications
+{
+	width: 60px;
+	height: 60px;
+	background: #fff;
+	border-radius: 30px;
+	box-sizing: border-box;
+	text-align: center;
+	box-shadow: 0 2px 5px rgba(0,0,0,.2)
+
+}
+.notifications:hover
+{
+	width:200px;
+	height: 60px;
+	text-align: left;
+	background: #ff2c74;
+	padding: 15px;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.notifications .fas
+{
+	color:#cecece;
+	line-height: 60px;
+	font-size: 50px;
+	
+}
+.notifications:hover .fas
+{
+	color: #fff;
+}
+.notifications .num
+{
+	position: absolute;
+	top: 0;
+	right: 5px;
+	width:25px;
+	border-radius: 50%;
+	background: #ff2c74;
+	color: #fff;
+	line-height: 25px;
+	font-family: sans-serif;
+	text-align: center;
+
+}
+.notifications:hover .num
+{
+	position:relative;
+	background: transparent;
+	color:#fff;
+	font-size: 15px;
+	top: -4px;
+}
+.notifications:hover .num:after
+{
+	content: ' Notification';
+}
+ul
+{
+	position: absolute;
+	left:0;
+	top: 60px;
+	margin: 0;
+	padding: 0;
+	width:100%;
+	background:#fff;
+	box-shadow: 0 5px 15px rgba(0,0,0,.5);
+	padding: 20px;
+	box-sizing: border-box;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	display: none;
+}
+.notifications:hover ul
+{
+	display: block;
+}
+ul li
+{
+	list-style: none;
+	border-bottom:  1px solid rgba(0,0,0,.1)
+padding 8px 0;
+display: flex;
+}
+ul li:last-child
+{
+	border-bottom:  none;
+}
+ul li .icon
+{
+	width: 24px;
+	height: 24px;
+	background-attachment: #cc;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 24px;
+	margin-right: 15px;
+}
+ul li .icon fas
+{
+	color:#fff;
+	font-size: 16px;
+	line-height: 24px;
+}
+ul li .text
+{
+	position: relative;
+	font-family: sans-serif;
+	top: 3px;
+	cursor: pointer;
+
+}
+ul li:hover .text
+{
+	font-weight: bold;
+	color: #ff2c74;
+}
+
+</style>
+
+<body>
+	
+        <header >
+        
+            <div class="wrapper">
+                <h1>Page admin<span class="point">.</span></h1>            
+               
+               		&nbsp&nbsp
+					 <div style="padding:30px;width:600px;float:right;"> 						                		
+				 			<div class="notifications" style="float:left;">
+				 			
+				 				<i class="far fa-bell" style="font-size:35px;position:center;"></i>
+				 				&nbsp
+				 				<span class="num" th:utext="${nbreRes}">
+				 					
+				 				</span>
+				 				<ul>
+				 					<li th:each="p:${listRes}">
+				 						<span class="icon">
+				 						
+				 						</span>
+				 						<a th:href="@{adminConfirmation(idRes=${p.getIdReservation()})}" th:utext="${p.getIdReservation()}"></a>
+				 					</li>
+				
+				 				</ul>
+
+ 							</div>
+ 							
+ 							<div class="notifications" style="float:right;">
+ 								<i class="far fa-user"  style="font-size:30px;position:center;"></i>
+				 				<span class="num">
+				 				</span>
+				 				<ul>
+				 					<li >
+				 						<a href="#">Compte</a>				 								 						
+				 					</li>
+				 					<li >				 						
+				 						<a href="#">Salles</a>				 						
+				 					</li>
+				 						<li >				 										 						
+				 						<a href="#">Reservations</a>
+				 					</li>
+				 						<li >				 		
+				 						<a href="#">Reservation</a>
+				 						
+				 					</li>
+				 					<li>
+				 					     <form th:action="@{/logout}" method="get">
+							       				 <button class="btn btn-md btn-danger btn-block" name="registration"
+							              		  type="Submit">Logout
+							        		</button>
+							  			</form>
+				 					
+				 					</li>
+				
+				 				</ul>
+
+ 							</div>
+ 							
+                    </div>    
+					
+				</div>
+            
+            
+        </header>
+
+</body>
+</html>

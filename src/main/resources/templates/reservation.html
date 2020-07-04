@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"href="../static/css/css2.css"
+th:href="@{css/css2.css}"/>
+
+</head>
+
+<body>
+<script type="text/javascript">
+
+document.getElementById('meeting-time').valueAsDate = new Date();
+
+
+</script>
+ 
+	<!-- Search Bar -->
+        <header>
+            <div class="wrapper">
+                <h1>Gestion Conferences<span class="point">.</span></h1>
+                <nav>
+                    <ul>
+                        <li id="signup"><a href="/acceuilAth">acceuil </a></li>
+                        <li id="signup"><a href="/sallesAth">Salles </a></li>                
+			 			<li id="signup"><a th:href="@{/MesReservation}">Mes Reservations</a></li>
+					    <li id="login">
+					      <a id="login-trigger" href="#" th:utext="${user.getName()} +'▼'">
+					      </a>				      
+					      <div id="login-content" style="background-color:#1f2833; border-radius: 5px;">
+					      	
+					      	  <a href="/profile" style="color:white;">Mon compte</a>
+					          <form th:action="@{/logout}" method="get">
+							        <button class="btn btn-md btn-danger btn-block" name="registration"
+							                type="Submit">Logout
+							        </button>
+							  </form>
+							 
+					      </div>    
+					    </li>                 
+
+					  </ul>
+				</nav>
+					<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+					<script>
+						$(document).ready(function(){
+					  $('#login-trigger').click(function(){
+					    $(this).next('#login-content').slideToggle();
+					    $(this).toggleClass('active');          
+					    
+					    if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+					      else $(this).find('span').html('&#x25BC;')
+					    })
+					});
+					</script>
+                    </ul>
+                </nav>
+
+            </div>
+        </header>
+
+	<div class="search_bar" style="margin-top:100px;">
+		<div class="container">
+			<div class="row">
+				
+					<div class="search_bar_container">
+						<form th:action="@{/reserve}" id="search_bar_form" class="search_bar_form d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-between clearfix">							
+					 <div>
+					 <input type="hidden" name="id" th:value="${id}"></input>
+						<input type="datetime-local" th:value="${debut}" name="debut" id="meeting-time" class="search_form_select" >			
+						
+					 </div>						
+				     <div>
+						<input type="datetime-local" th:value="${fin}" name="fin" id="meeting-time"  class="search_form_select">			
+					 </div>		
+				
+					<button class="button text-center"><span>Confirmer</span>	
+					</button>	                 
+					
+					</form>
+						
+					</div>
+				
+			</div>
+		</div>
+	</div>
+ 	
+		<div th:if="${bool == true}" style="width:60%;background-color:#bc8acc;text-align:Center;margin:auto; " >
+			<h4 style="color:black;">
+				La chambre est disponible,veuillez cliquer sur la boutton pour finaliser votre reservation
+			 </h4>
+			<a th:href="@{index(idRes=${idRes})} "class="button_container room_button button text-center"><span>Continuer</span></a>
+			<br>
+		</div>
+	
+<br>
+<br>
+	<div style="margin-left:40%; ">
+				<div class="col-lg-4 room_col magic_up" 																																																																																																>
+					<div class="room">
+						<div class="room_image"><img th:src="${salle.getImage()}" ></div>
+						<div class="room_content text-center">
+							<div class="room_price">300 DH / <span> Jours</span></div>
+							<div class="room_type">single</div>
+							<div class="room_title"><a href="rooms.html">salle</a></div>
+							<div class="room_text">
+								
+							</div>
+							<a href="#" class="button_container room_button"><div class="button text-center"><span>Chercher maintenant</span></div></a>
+						</div>
+					</div>
+				</div>
+	</div>				
+		
+        	<footer class="footer">
+		<div class="container">
+			<div class="row">
+
+				<!-- Footer Logo -->
+				<div class="col-lg-3 footer_col">
+					<div class="footer_logo_container">
+						<div class="footer_logo">
+							<a href="#" class="text-center">
+								<div class="footer_logo_subtitle">Lieux</div>
+								<div class="footer_logo_title">Pour conference</div>
+								<div class="footer_logo_stars">
+									<ul class="d-flex flex-row align-items-start justfy-content-start">
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+										<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									</ul>
+								</div>
+							</a>
+						</div>
+						<div class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by zineb louzi
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</div>
+					</div>
+				</div>
+
+				<!-- Footer Menu -->
+				<div class="col-lg-5 footer_col">
+					<div class="footer_menu">
+						<ul class="d-flex flex-row align-items-start justify-content-start">
+							<li><a href="index.html">Acceuil</a></li>
+							<li><a href="about.html">About us</a></li>
+							<li><a href="rooms.html">Salles</a></li>
+							
+							<li><a href="contact.html">Contact</a></li>
+						</ul>
+						<div class="footer_menu_text">
+							<p>Trouvez le lieu ideal pour votre conference.</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Footer Contact -->
+				<div class="col-lg-4 footer_col">
+					<div class="footer_contact clearfix">
+						<div class="footer_contact_content float-lg-right">
+							<ul>
+								<li>Address: <span>Avenue guelmim</span></li>
+								<li>Phone: <span>+212 608 37 02 61</span></li>
+								<li>Email: <span>zineb louzi@gmail.com</span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</footer>
+
+
+					
+</body>
+</html>

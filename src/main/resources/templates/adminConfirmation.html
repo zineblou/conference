@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="styles/bootstrap-4.1.2/bootstrap.min.css">
+
+</head>
+<body>
+		<table class="table">
+			<tr>
+				<th>ID Reservation</th>
+				<th>ID Salle</th>
+				<th>Nom reservateur</th>
+				<th>Date Debut</th>
+				<th>Date fin </th>
+				<th>Titre d'article</th>
+				<th>Theme</th>
+				<th>Fichier</th>
+				<th>Action</th>
+			</tr>
+			<tr>
+				<td th:utext="${reservation.getIdReservation()}"></td>
+				<td th:utext="${reservation.getSalleReservee().getId()}"></td>
+				<td th:utext="${reservation.getReservateur().getName()}"></td>
+				<td th:utext="${reservation.getDebutReservation()}"></td>
+				<td th:utext="${reservation.getFinReservation()}"></td>
+				<td th:utext="${reservation.getActivite().getTitre()}"></td>
+				<td th:utext="${reservation.getActivite().getTheme()}"></td>
+				<td ><a href="C:/Users/asus/Desktop/out.docx" target="_self" download >Telecharger</a></td>
+				<td>
+				<a th:href="@{refuser(idRes=${reservation.getIdReservation()})}">Refuse </a>
+				<a th:href="@{accepter(idRes=${reservation.getIdReservation()})}">Accepter</a>
+				</td>
+			</tr>	
+			
+		</table>
+</body>
+</html>
